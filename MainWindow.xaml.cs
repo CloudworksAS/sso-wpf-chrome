@@ -18,25 +18,6 @@ namespace WPFSample
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     /// 
-    internal class CustomBrowser : IBrowser
-    {
-        public Task<BrowserResult> InvokeAsync(BrowserOptions options, CancellationToken cancellationToken = default)
-        {
-            var tcs = new TaskCompletionSource<BrowserResult>();
-
-            // Implement custom browser and navigate to options.StartUrl.
-            // Set the BrowserResult with the callbackUrl that Auth0 redirects back to,
-            // this URL is the URL that contains state and code query parameters.
-            tcs.SetResult(new BrowserResult
-            {
-                ResultType = BrowserResultType.Success,
-                Response = "test"
-            });
-
-            return tcs.Task;
-        }
-
-    }
 
     internal class SystemBrowser : IBrowser
     {
@@ -135,11 +116,6 @@ namespace WPFSample
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        Window ReturnWindow()
-        {
-             return this; // your WPF application window where you want the login to pop up
         }
 
         private async void LoginButton_OnClick(object sender, RoutedEventArgs e)
