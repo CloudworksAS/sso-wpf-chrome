@@ -128,8 +128,8 @@ namespace WPFSample
                 Domain = domain,
                 ClientId = clientId,
                 Browser = new SystemBrowser(),
-                RedirectUri = "http://localhost:8888",
-                PostLogoutRedirectUri = "http://localhost:8888/logout"
+                RedirectUri = "http://127.0.0.1:8888",
+                PostLogoutRedirectUri = "http://127.0.0.1:8888/logout"
             });
 
             var extraParameters = new Dictionary<string, string>();
